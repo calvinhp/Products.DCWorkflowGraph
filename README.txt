@@ -8,14 +8,14 @@ DCWorkflowGraph
     I want to make it a graphic editor for DCWorkflow, just like what
     OpenFlowEditor does.
 
-    DCWorkflowGraph is at "collective":http://svn.plone.org/svn/collective/Products.DCWorkflowGraph
+    DCWorkflowGraph is at the collective: http://svn.plone.org/svn/collective/Products.DCWorkflowGraph
 
     Product home: http://www.zope.org/Members/panjunyong/DCWorkflowGraph
 
-Require
-=======
+Requires
+========
 
-    "Graphviz":http://www.graphviz.org
+    Graphviz - http://www.graphviz.org
 
 Install
 =======
@@ -26,16 +26,12 @@ How to use it
 =============
 
     Go to ZMI portal_workflow/your_workflow, there is a new tab called
-'graph', click it and you will see the workflow graph!
+    'graph', click it and you will see the workflow graph!
 
 Credits
 =======
 
     Author: panjunyong (panjy@zopechina.com, http://www.zopechina.com)
-
-    egg-i-fy
-
-    - Alex Clark <aclark@aclark.net>
 
     version 0.3 for CPSWorkflow:
 
@@ -47,8 +43,7 @@ Credits
 
     - "dcworkfow2dot.py":http://awkly.org/Members/sidnei/weblog_storage/blog_27014
 
-    - "DCWorkflow dot
-  graphs":http://xiru.org/Members/xiru/weblog_storage/blog_79598
+    - "DCWorkflow dot graphs":http://xiru.org/Members/xiru/weblog_storage/blog_79598
 
     - "OpenFlowEditor":http://www.openflow.it/wwwopenflow/Download/OpenFlowEditor_0_4.tgz
 
@@ -57,3 +52,7 @@ Credits
     - "dot guide":http://www.research.att.com/sw/tools/graphviz/dotguide.pdf
 
     - "dot man page":http://www.die.net/doc/linux/man/man1/dot.1.html
+
+    Convert product package to egg
+
+    - Alex Clark <aclark@aclark.net>
