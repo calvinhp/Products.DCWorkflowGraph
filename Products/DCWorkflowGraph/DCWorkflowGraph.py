@@ -110,7 +110,7 @@ def getPOT(self, wf_id="", REQUEST=None):
     out.append('}')
     return '\n'.join(out)
 
-def getGraph(self, wf_id="", format="gif", REQUEST=None):
+def getGraph(self, wf_id="", format="png", REQUEST=None):
     """show a workflow as a graph, copy from:
 "OpenFlowEditor":http://www.openflow.it/wwwopenflow/Download/OpenFlowEditor_0_4.tgz
     """
