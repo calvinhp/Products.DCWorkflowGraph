@@ -6,6 +6,10 @@ Changelog
 0.4 - Release
 -------------
 
+* Add Spanish l10n [macagua]
+
+* Add support for i18n [macagua]
+
 * Use standard PATH environment for bin_search_path
   when we are under posix systems.
 

@@ -10,9 +10,11 @@
     />
 </tal:download>
 
-<h3>DCWorkflow Graph</h3>
+<div i18n:domain="DCWorkflowGraph">
 
-<p> 
+<h3 i18n:translate="heading_dcworkflowdraph">DCWorkflow Graph</h3>
+
+<p i18n:translate="help_dcworkflowdraph_install_graphviz"> 
 You must install <a href="http://www.graphviz.org/">Graphviz</a> before you will be able to see workflow graphs.
 If Graphviz is not installed, please install it now.
 </p>
@@ -31,17 +33,19 @@ If Graphviz is not installed, please install it now.
   tal:define="only_ids request/only_ids|nothing;
     translate request/translate|nothing;">
 
-  Only Show Ids:
+  <span i18n:translate="only_show_ids">Only Show Ids:</span>
   <input type="checkbox" checked="" name="only_ids"
     tal:attributes="checked only_ids"/><br/>
 
-  Translate Graph: <input type="checkbox" checked="" name="translate"
+  <span i18n:translate="translate_graph">Translate Graph:</span> <input type="checkbox" checked="" name="translate"
     tal:attributes="checked translate"/><br/>
 
-  <input type="submit" value="update"/>
-  <input type="submit" name="download" value="download dot file"/>
+  <input type="submit" value="update" i18n:attributes="value input_value_update;" />
+  <input type="submit" name="download" value="download dot file" i18n:attributes="value input_value_download_dot_file;" />
 
 </form>
+
+</div>
 
 <p>
 <a href="http://www.zopechina.com">zopechina.com</a>
