@@ -1,7 +1,12 @@
 Changelog
 =========
 
-(Developer name in brackets)
+0.4.1 - Release
+---------------
+
+* Fix incompatibility with Chameleon
+
+* Fall-back to management_page_charset if there is no portal_properties.site_properties
 
 0.4 - Release
 -------------
