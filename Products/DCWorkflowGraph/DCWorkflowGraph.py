@@ -4,6 +4,7 @@ import os
 import sys
 from os.path import basename, splitext, join
 from config import bin_search_path, DOT_EXE
+from zope.i18n import translate
 
 
 # following 2 method is copied form PortalTranforms 
@@ -115,7 +116,11 @@ def getGraph(self, wf_id="", format="png", REQUEST=None):
 "OpenFlowEditor":http://www.openflow.it/wwwopenflow/Download/OpenFlowEditor_0_4.tgz
     """
     pot = getPOT(self, wf_id, REQUEST)
-    encoding = self.portal_properties.site_properties.getProperty('default_charset', 'utf-8')
+    try:
+        encoding = self.portal_properties.site_properties.getProperty('default_charset', 'utf-8')
+    except AttributeError:
+        # no portal_properties or site_properties, fallback to:
+        encoding = self.management_page_charset.lower()
     pot = pot.encode(encoding)
     infile = mktemp('.dot')
     f = open(infile, 'w')
