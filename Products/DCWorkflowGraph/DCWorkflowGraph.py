@@ -7,7 +7,7 @@ from config import bin_search_path, DOT_EXE
 from zope.i18n import translate
 
 
-# following 2 method is copied form PortalTranforms 
+# following 2 method is copied form PortalTranforms
 # Owners of PortalTransforms own the copyright of these 2 functions
 class MissingBinary(Exception): pass
 
@@ -71,7 +71,7 @@ def getPOT(self, wf_id="", REQUEST=None):
     for s in wf.states.objectValues():
         s_id = s.getId()
         s_title = getObjectTitle(s, REQUEST)
-        out.append('%s [shape=box,label="%s",style="filled",fillcolor="#ffcc99"];' % (s_id, s_title))
+        out.append('"%s" [shape=box,label="%s",style="filled",fillcolor="#ffcc99"];' % (s_id, s_title))
         for t_id in s.transitions:
             transitions_with_init_state.append(t_id)
             try:
@@ -105,7 +105,7 @@ def getPOT(self, wf_id="", REQUEST=None):
             transitions[key] = value
 
     for k, v in transitions.items():
-        out.append('%s -> %s [label="%s"];' % (k[0], k[1],
+        out.append('"%s" -> "%s" [label="%s"];' % (k[0], k[1],
                                                ',\\n'.join(v)))
 
     out.append('}')
@@ -126,11 +126,11 @@ def getGraph(self, wf_id="", format="png", REQUEST=None):
     f = open(infile, 'w')
     f.write(pot)
     f.close()
-    
+
     if REQUEST is None:
         REQUEST = self.REQUEST
     response = REQUEST.RESPONSE
-        
+
     if format != 'dot':
         outfile = mktemp('.%s' % format)
         os.system('%s -T%s -o %s %s' % (bin_search(DOT_EXE), format, outfile, infile))
@@ -145,7 +145,7 @@ def getGraph(self, wf_id="", format="png", REQUEST=None):
         response.setHeader('Content-Type', 'text/x-graphviz')
         response.setHeader('Content-Disposition',
                            'attachment; filename=%s.dot' % filename)
-        
+
     os.remove(infile)
     return result
 
